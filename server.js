@@ -22,8 +22,8 @@ app.get("/", async (req, res) => {
     );
 
     console.log(response.data);
-
-    res.status(200).send(response.data);
+    const data = response.data;
+    res.status(200).render("index.ejs", { data });
   } catch (error) {
     console.error("Error:", error);
 
@@ -31,11 +31,12 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.post("/submit", async (req, res) => {
+//fan route
+app.post("/submitfan", async (req, res) => {
   try {
     const requestBody = {
       teamid: "2KwzXxs",
-      device: req.body.device,
+      device: "fan",
       value: req.body.value,
     };
 
@@ -54,7 +55,77 @@ app.post("/submit", async (req, res) => {
   }
 });
 
-app.post("/status", (req, res) => {});
+//bulb route
+app.post("/submitbulb", async (req, res) => {
+  try {
+    const requestBody = {
+      teamid: "2KwzXxs",
+      device: "bulb",
+      value: req.body.value,
+    };
+
+    const response = await axios.post(
+      "https://kodessphere-api.vercel.app/devices",
+      requestBody
+    );
+
+    console.log(response.data);
+
+    res.status(200).render("ok.ejs");
+  } catch (error) {
+    console.error("Error:", error);
+
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+//ac route
+app.post("/submitbulb", async (req, res) => {
+  try {
+    const requestBody = {
+      teamid: "2KwzXxs",
+      device: "ac",
+      value: { temp: req.body.speed, state: req.body.value },
+    };
+
+    const response = await axios.post(
+      "https://kodessphere-api.vercel.app/devices",
+      requestBody
+    );
+
+    console.log(response.data);
+
+    res.status(200).render("ok.ejs");
+  } catch (error) {
+    console.error("Error:", error);
+
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+//led route
+app.post("/submitled", async (req, res) => {
+  try {
+    const requestBody = {
+      teamid: "2KwzXxs",
+      device: "bulb",
+      value: req.body.value,
+    };
+
+    const response = await axios.post(
+      "https://kodessphere-api.vercel.app/devices",
+      requestBody
+    );
+
+    console.log(response.data);
+
+    res.status(200).render("ok.ejs");
+  } catch (error) {
+    console.error("Error:", error);
+
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 app.listen(port, (err) => {
   if (err) throw err;

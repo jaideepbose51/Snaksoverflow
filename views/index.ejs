@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CodePen - Sticky Slider Navigation (Responsive)</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/public/css/style.css">
+
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<!-- Hero -->
+	<section class="et-hero-tabs">
+		<h1>Hackathon</h1>
+		<h3>Team:Snacksunderflow</h3>
+		<div class="container">
+			<div class="slider">
+				<div class="box1">
+				</div>
+				<div class="box2">
+				</div>
+				<div class="box3">
+				</div>
+				<div class="box4">
+				</div>
+				<div class="box5">
+				</div>
+				<div class="box6">
+				</div>
+				<div class="box7">
+				</div>
+			</div>
+		</div>
+		<div id="test"></div>
+		<div class="et-hero-tabs-container">
+			<br><br><br><br><br>
+			<a class="et-hero-tab" href="#tab-flexbox">About</a>
+			<a class="et-hero-tab" href="#tab-react">Features</a>
+			<a class="et-hero-tab" href="#tab-angular">More option</a>
+			<a class="et-hero-tab" href="#tab-other">Other</a>
+			<span class="et-hero-tab-slider"></span>
+		</div>
+	</section>
+	<section class="et-slide" id="tab-flexbox">
+		<h3>
+			We are a hackathon dream team combining Ashutosh Kumar Tiwari's frontend mastery (HTML, CSS, JavaScript)
+			with Jaideep Bose's backend expertise (Node.js, Express, MERN stack). Together, we craft innovative
+			solutions and tackle challenges head-on. Dive into our portfolio to see the magic happen!
+		</h3>
+	</section><br><br><br>
+
+
+	<main class="et-main">
+
+
+
+
+		<section class="et-slide" id="tab-react">
+			<section class="et-slide" id="tab-flexbox">
+
+				<br><br><br><br><br><br><br><br><br><br><br>
+
+
+				<h1>Features</h1>
+				<h3>API Integration</h3>
+				<div class="row">
+					<div class="unique-container">
+						<div class="unique-card">
+							<div class="unique-box">
+								<div class="unique-content">
+									<h2></h2>
+									<h3>Fan</h3>
+									<img src="/public/images/fan.png" height="50px" width="50px"><br>
+									<form action="/submitfan" method="post">
+										<div class="speed-dropdown">
+
+											<label for="speed">Speed:</label>
+											<select id="speed" name="value">
+												<option value="0">0</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+										</div>
+										<button type="submit">Submit</button>
+									</form>
+									<div class="current-color-input">
+										<label for="current-color" class="new">Current State:</label>
+										<div class="current-color" id="data">
+											<%= data.fan %>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="unique-card">
+							<div class="unique-box">
+								<div class="unique-content">
+									<h2></h2>
+									<h3>Bulb</h3>
+									<img src="/public/images/bulb.png" height="50px" width="50px"><br>
+									<form action="/submitbulb" method="post">
+										<div class="speed-dropdown">
+											<label for="speed">State:</label>
+											<select id="bstate" name="value">
+												<option value="1">On</option>
+												<option value="0">Off</option>
+											</select>
+										</div>
+
+										<button type="submit">Submit</button>
+									</form>
+									<div class="current-color-input">
+										<label for="current-color" class="new">Current State:</label>
+										<div class="current-color" id="data">
+											<%= data.bulb %>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="unique-card">
+							<div class="unique-box">
+								<div class="unique-content">
+									<h2></h2>
+									<h3>AC</h3>
+									<img src="/public/images/ac.png" height="50px" width="50px"><br>
+									<form action="/submitac" method="post">
+										<div class="speed-dropdown">
+											<label for="state">State:</label>
+											<select id="speed" name="value">
+												<option value="0">On</option>
+												<option value="1">Off</option>
+											</select>
+											<div class="speed-dropdown">
+												<label for="speed">Temperature:</label>
+												<select id="speed" name="speed">
+													<option value="16">16</option>
+													<option value="17">17</option>
+													<option value="18">18</option>
+													<option value="19">19</option>
+													<option value="20">20</option>
+													<option value="21">21</option>
+													<option value="22">22</option>
+													<option value="23">23</option>
+													<option value="23">24</option>
+													<option value="23">25</option>
+													<option value="23">26</option>
+													<option value="23">27</option>
+													<option value="23">28</option>
+													<option value="23">29</option>
+													<option value="23">30</option>
+												</select>
+											</div>
+
+										</div>
+										<button type="submit">Submit</button>
+									</form>
+									<div class="current-color-input">
+										<label for="current-color" class="new">Current Temperature:</label>
+										<div class="current-color" id="data">
+											<%= data.ac.temp %>
+												<%= data.ac.state %>
+
+										</div>
+										<!-- <input type="text" id="current-color" name="current-color" readonly> -->
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="unique-card">
+							<div class="unique-box">
+								<div class="unique-content">
+									<h2></h2>
+									<h3>LED</h3>
+									<img src="/public/images/led.png" height="50px" width="50px"><br>
+									<form action="/submitled" method="post">
+										<div class="speed-dropdown">
+											<label for="speed">Color:</label>
+											<select id="speed" name="value">
+												<option value="#000000">#000000</option>
+												<option value="#51FF00">#51FF00</option>
+												<option value="#FF8700">#FF8700</option>
+												<option value="#FF0000">#FF0000 </option>
+												<option value="#0042FF">#0042FF</option>
+												<option value="#00F3FF">#00F3FF</option>
+											</select>
+										</div>
+
+										<button type="submit">Submit</button>
+									</form>
+									<div class="current-color-input">
+										<label for="current-color" class="new">Current Color:</label>
+										<div class="current-color" id="data">
+											<%= data.led %>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+					<br><br><br><br><br><br><br><br><br><br>
+
+			</section>
+		</section>
+		<br><br><br><br><br><br><br><br><br><br>
+		<section class="et-slide" id="tab-angular">
+
+			<h1>More Options</h1>
+			<div class="imgLoader"></div>
+
+			<h1 class="title">
+
+			</h1>
+			<div class="credit">
+
+			</div>
+			<div class="book">
+				<div class="gap"></div>
+				<div class="pages">
+					<div class="page"></div>
+					<div class="page"></div>
+					<div class="page"></div>
+					<div class="page"></div>
+					<div class="page"></div>
+					<div class="page"></div>
+				</div>
+				<div class="flips">
+					<div class="flip flip1">
+						<div class="flip flip2">
+							<div class="flip flip3">
+								<div class="flip flip4">
+									<div class="flip flip5">
+										<div class="flip flip6">
+											<div class="flip flip7"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<section class="et-slide" id="tab-other">
+			<h1>Contact </h1>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<footer class="p-8 text-slate-500 mx-auto">
+				<section class="mb-6 flex lg:grid lg:grid-cols-12 flex-col lg:flex-row">
+
+					<div class="flex flex-col items-center lg:items-start lg:mr-10
+							 col-span-4 mb-4">
+						<a href="#" class="block mb-4 w-10 h-10">
+							<img class="block w-full h-full"
+								src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+						</a>
+
+						<p class="mb-4 text-center md:text-center lg:text-left">
+							Making the world a better place through <br>
+							constructing elegant hierarchies.
+						</p>
+
+						<span class="space-x-6">
+							<a href="#" class=""><i class="fab fa-facebook"></i></a>
+							<a href="#" class=""><i class="fab fa-instagram"></i></a>
+							<a href="#" class=""><i class="fab fa-twitter"></i></a>
+						</span>
+					</div>
+
+
+					<div class="hidden md:block w-full lg:col-span-8">
+						<ul class="flex justify-between">
+							<li>
+								<h5 class="text-slate-400 mb-3">SOLUTIONS</h5>
+								<ul class="space-y-3">
+									<li><a href="#" class="">Marketing</a></li>
+									<li><a href="#" class="">Analytics</a></li>
+									<li><a href="#" class="">Commerce</a></li>
+									<li><a href="#" class="">Insights</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<h5 class="text-slate-400 mb-3">SUPPORT</h5>
+								<ul class="space-y-3">
+									<li><a href="#" class="">Pricing</a></li>
+									<li><a href="#" class="">Documentation</a></li>
+									<li><a href="#" class="">Guides</a></li>
+									<li><a href="#" class="">API Status</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<h5 class="text-slate-400 mb-3">COMPANY</h5>
+								<ul class="space-y-3">
+									<li><a href="#" class="">About</a></li>
+									<li><a href="#" class="">Blog</a></li>
+									<li><a href="#" class="">Jobs</a></li>
+									<li><a href="#" class="">Press</a></li>
+									<li><a href="#" class="">Partners</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<h5 class="text-slate-400 mb-3">LEGAL</h5>
+								<ul class="space-y-3">
+									<li><a href="#" class="">Claim</a></li>
+									<li><a href="#" class="">Privacy</a></li>
+									<li><a href="#" class="">Terms</a></li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+
+				</section>
+
+				<hr class="mb-4">
+
+				<h6 class="text-center"> © 2024 Workflow, Inc. All rights reserved.</h6>
+
+			</footer>
+
+		</section>
+	</main>
+	<!-- partial -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src="/public/js/script.js"></script>
+
+</body>
+
+</html>
